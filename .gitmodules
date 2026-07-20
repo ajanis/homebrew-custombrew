@@ -4,3 +4,6 @@
 [submodule "spoctunnel"]
 	path = spoctunnel
 	url = https://github.com/ajanis/spoctunnel.git
+[submodule "MovieRoomRemote"]
+	path = MovieRoomRemote
+	url = https://github.com/ajanis/MovieRoomRemote.git
