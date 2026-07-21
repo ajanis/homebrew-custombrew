@@ -1,17 +1,16 @@
-require 'formula'
-
 class Sshpass < Formula
-  url 'http://sourceforge.net/projects/sshpass/files/sshpass/1.10/sshpass-1.10.tar.gz'
-  homepage 'http://sourceforge.net/projects/sshpass'
-  sha256 'ad1106c203cbb56185ca3bad8c6ccafca3b4064696194da879f81c8d7bdfeeda'
+  desc "Non-interactive ssh password authentication helper"
+  homepage "https://sourceforge.net/projects/sshpass"
+  url "https://downloads.sourceforge.net/project/sshpass/sshpass/1.10/sshpass-1.10.tar.gz"
+  sha256 "ad1106c203cbb56185ca3bad8c6ccafca3b4064696194da879f81c8d7bdfeeda"
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
-    system "make install"
+    system "make", "install"
   end
 
-  def test
-    system "sshpass"
+  test do
+    system "#{bin}/sshpass"
   end
 end

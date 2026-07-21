@@ -25,6 +25,20 @@ A tool for non-interactive SSH login where a password is required.
 
   - ajanis/custombrew/sshpass
 
+## Casks
+
+### Movie Room Remote
+
+A macOS menu bar Apple TV remote powered by a Home Assistant dashboard panel.
+
+- [Homepage](https://github.com/ajanis/MovieRoomRemote)
+
+- Install:
+
+  ```sh
+  brew install --cask ajanis/custombrew/movie-room-remote
+  ```
+
 ## Using custom Taps and Formulae from Github
 
 ### Syntax/Usage
