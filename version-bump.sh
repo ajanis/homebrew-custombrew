@@ -234,13 +234,13 @@ release_cask() {
     [[ -f "${latest_path}" ]] || die "Expected release metadata was not created: ${latest_path}"
 
     release_metadata="$(mktemp)"
-    python3 - "${latest_path}" "${repo_path}/website" >"${release_metadata}" <<'PY'
+    python3 - "${latest_path}" "${repo_path}" >"${release_metadata}" <<'PY'
 import json
 import pathlib
 import sys
 
 latest_path = pathlib.Path(sys.argv[1])
-website_dir = pathlib.Path(sys.argv[2])
+repo_dir = pathlib.Path(sys.argv[2])
 data = json.loads(latest_path.read_text())
 
 sha256 = data.get("sha256", "")
@@ -254,7 +254,7 @@ print(f"SHA\t{sha256}")
 for asset in assets:
     asset_path = pathlib.Path(asset)
     if not asset_path.is_absolute():
-        asset_path = website_dir / asset_path
+        asset_path = repo_dir / asset_path
     print(f"ASSET\t{asset_path}")
 PY
 
