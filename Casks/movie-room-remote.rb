@@ -1,6 +1,6 @@
 cask "movie-room-remote" do
   version "1.0.0"
-  sha256 "dafa06b6bee1811b45faee87b2c35ab2bbf3f6b42358a62559ff53812800b38a"
+  sha256 "e9b4b9d282b9a70696562d4f74a023c229d62f8cce08ae5f39dd7d6ebb6437e4"
 
   url "https://github.com/ajanis/MovieRoomRemote/releases/download/v#{version}/MovieRoomRemote-#{version}.dmg"
   name "Movie Room Remote"
@@ -12,7 +12,7 @@ cask "movie-room-remote" do
     strategy :github_latest
   end
 
-  depends_on macos: :sequoia
+  depends_on :macos
 
   app "MovieRoomRemote.app"
 
